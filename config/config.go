@@ -19,13 +19,13 @@ type DatabaseConfig struct {
 	Name string
 }
 
-type TslConfig struct {
+type TlsConfig struct {
 	CertFile string
 	KeyFile string
 }
 type Config struct {
 	Server ServerConfig
-	Tsl TslConfig
+	Tls TlsConfig
 	Database DatabaseConfig
 }
 // LoadConfig loads the configuration from the config file
@@ -47,9 +47,9 @@ func LoadConfig() Config {
 			Host: viper.GetString("server.host"),
 			Port: viper.GetString("server.port"),
 		},
-		Tsl: TslConfig{
-			CertFile: viper.GetString("tsl.certFile"),
-			KeyFile: viper.GetString("tsl.keyFile"),
+		Tls: TlsConfig{
+			CertFile: viper.GetString("tls.certFile"),
+			KeyFile: viper.GetString("tls.keyFile"),
 		},
 		Database: DatabaseConfig{
 			Host: viper.GetString("database.host"),

@@ -1,0 +1,12 @@
+server:
+  host: <localhost>
+  port: <:443>
+tls:
+  certFile: <cert.pem>
+  keyFile: <key.pem>
+database:
+  host: <localhost>
+  port: <3306>
+  user: <root>
+  password: <password>
+  name: <dbname>
