@@ -43,14 +43,13 @@ func main() {
 
 	})
 
-	r.GET("/", func(c *gin.Context) { 
+	r.GET("/", func(c *gin.Context) {
 		c.Redirect(http.StatusFound, "/public/home/")
 	})
-	
+
 	// Start the server with TLS
 	port := fmt.Sprintf(":%v", config.Server.Port)
 	if err := http.ListenAndServeTLS(port, config.Tls.CertFile, config.Tls.KeyFile, r); err != nil {
 		log.Fatalf("Certification error: %v", err)
 	}
 }
-
